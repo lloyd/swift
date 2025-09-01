@@ -1153,7 +1153,7 @@ public enum Ph: String, CaseIterable {
     case rectangleDashed = "rectangle-dashed"
     case recycle = "recycle"
     case redditLogo = "reddit-logo"
-    case repeat = "repeat"
+    case `repeat` = "repeat"
     case repeatOnce = "repeat-once"
     case replitLogo = "replit-logo"
     case resize = "resize"
