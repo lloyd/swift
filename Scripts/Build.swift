@@ -22,11 +22,12 @@ struct Contents: Codable {
     
     static func forFile(filename: String) -> Self {
         return Contents(
-            images: [ContentImage(filename: filename, idiom: "universal")],
+            images: [ContentImage(filename: filename, idiom: "universal", scale: nil)],
             info: ContentInfo(author: "xcode", version: 1),
             properties: ContentProperties(
                 preservesVectorRepresentation: true,
-                templateRenderingIntent: "template"
+                templateRenderingIntent: "template",
+                autoScaling: "auto"
             ))
     }
 }
@@ -34,6 +35,13 @@ struct Contents: Codable {
 struct ContentImage: Codable {
     let filename: String
     let idiom: String
+    let scale: String?
+    
+    init(filename: String, idiom: String, scale: String? = nil) {
+        self.filename = filename
+        self.idiom = idiom
+        self.scale = scale
+    }
 }
 
 struct ContentInfo: Codable {
@@ -44,10 +52,12 @@ struct ContentInfo: Codable {
 struct ContentProperties: Codable {
     let preservesVectorRepresentation: Bool
     let templateRenderingIntent: String
+    let autoScaling: String?
     
     enum CodingKeys: String, CodingKey {
         case preservesVectorRepresentation = "preserves-vector-representation"
         case templateRenderingIntent = "template-rendering-intent"
+        case autoScaling = "auto-scaling"
     }
 }
 

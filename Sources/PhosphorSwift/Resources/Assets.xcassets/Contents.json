@@ -4,6 +4,7 @@
     "version" : 1
   },
   "properties" : {
-    "compression-type" : "automatic"
+    "compression-type" : "automatic",
+    "provides-namespace" : false
   }
 }
