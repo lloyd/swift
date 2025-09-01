@@ -7,20 +7,11 @@
 
 import Foundation
 
+@main
 enum Build {
     static func main() async throws {
         let (icons, assetsChanged) = try await buildAssets()
         try await emitSource(icons: icons, forceRegenerate: assetsChanged)
-    }
-}
-
-// Call main function
-Task {
-    do {
-        try await Build.main()
-    } catch {
-        print("Build failed: \(error)")
-        exit(1)
     }
 }
 
@@ -33,7 +24,10 @@ struct Contents: Codable {
         return Contents(
             images: [ContentImage(filename: filename, idiom: "universal")],
             info: ContentInfo(author: "xcode", version: 1),
-            properties: ContentProperties(templateRenderingIntent: "template"))
+            properties: ContentProperties(
+                preservesVectorRepresentation: true,
+                templateRenderingIntent: "template"
+            ))
     }
 }
 
@@ -48,8 +42,11 @@ struct ContentInfo: Codable {
 }
 
 struct ContentProperties: Codable {
+    let preservesVectorRepresentation: Bool
     let templateRenderingIntent: String
+    
     enum CodingKeys: String, CodingKey {
+        case preservesVectorRepresentation = "preserves-vector-representation"
         case templateRenderingIntent = "template-rendering-intent"
     }
 }
