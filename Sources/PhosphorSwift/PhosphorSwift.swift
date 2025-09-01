@@ -6,6 +6,11 @@
 //
 
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 
 public extension Ph {
     enum IconWeight: String, CaseIterable, Identifiable {
@@ -38,7 +43,9 @@ public extension Ph {
     }
     
     private static func icon(_ name: String) -> Image {
-        Image(name, bundle: .module)
+        // For now, use the traditional asset catalog approach
+        // The SVG files are copied but Xcode still needs them in xcassets format
+        return Image(name, bundle: .module)
             .interpolation(.medium)
             .resizable()
     }

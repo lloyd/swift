@@ -1,16 +1,13 @@
 //
 //  Icons.swift
-//  Phosphor Icons
+//  PhosphorSwift - Auto Generated
 //
-//  Created by Tobias Fried on 1/22/23.
-//  GENERATED FILE
+//  Icon count: 1518
 //
 
-import SwiftUI
+import Foundation
 
-public enum Ph: String, CaseIterable, Identifiable {
-    public var id: Self { self }
-
+public enum Ph: String, CaseIterable {
     case acorn = "acorn"
     case addressBook = "address-book"
     case addressBookTabs = "address-book-tabs"
@@ -50,6 +47,8 @@ public enum Ph: String, CaseIterable, Identifiable {
     case applePodcastsLogo = "apple-podcasts-logo"
     case approximateEquals = "approximate-equals"
     case archive = "archive"
+    case archiveBox = "archive-box"
+    case archiveTray = "archive-tray"
     case armchair = "armchair"
     case arrowArcLeft = "arrow-arc-left"
     case arrowArcRight = "arrow-arc-right"
@@ -654,6 +653,10 @@ public enum Ph: String, CaseIterable, Identifiable {
     case folderDashed = "folder-dashed"
     case folderLock = "folder-lock"
     case folderMinus = "folder-minus"
+    case folderNotch = "folder-notch"
+    case folderNotchMinus = "folder-notch-minus"
+    case folderNotchOpen = "folder-notch-open"
+    case folderNotchPlus = "folder-notch-plus"
     case folderOpen = "folder-open"
     case folderPlus = "folder-plus"
     case folderSimple = "folder-simple"
@@ -1150,7 +1153,7 @@ public enum Ph: String, CaseIterable, Identifiable {
     case rectangleDashed = "rectangle-dashed"
     case recycle = "recycle"
     case redditLogo = "reddit-logo"
-    case `repeat` = "repeat"
+    case repeat = "repeat"
     case repeatOnce = "repeat-once"
     case replitLogo = "replit-logo"
     case resize = "resize"

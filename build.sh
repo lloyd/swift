@@ -1,7 +1,7 @@
 #! /usr/bin/env sh
 
-IF="./Scripts/Build.swift"
-OF="./Scripts/Build"
+IF="./Scripts/BuildSimple.swift"
+OF="./Scripts/BuildSimple"
 
 # Check if submodule needs updating
 echo "Checking for submodule updates..."
